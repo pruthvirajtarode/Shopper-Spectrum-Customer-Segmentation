@@ -405,7 +405,7 @@ Complete UML documentation available in [`diagrams/`](./diagrams/) folder:
 - **Methods:** 15+ operations
 
 ### **4. System Architecture**
-![Architecture](diagrams/system_architecture.png)
+![Architecture](system_architecture.png)
 - **Layers:** 3-tier architecture
 - **Components:** 12 modules
 - **Data Flow:** Complete system interaction
@@ -788,4 +788,5 @@ Star History
 *Empowering businesses with AI-driven customer insights*
 
 </div>
+
 
