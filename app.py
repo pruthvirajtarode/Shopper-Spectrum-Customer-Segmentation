@@ -309,10 +309,10 @@ def load_models():
             return None, None, None, None, None
         
         kmeans_model = joblib.load('models/kmeans_model.pkl')
-        scaler = joblib.load('models/scaler.pkl')
-        product_similarity = joblib.load('models/product_similarity.pkl')
-        cluster_labels = joblib.load('models/cluster_labels.pkl')
-        rfm_data = pd.read_csv('models/rfm_data.csv')
+        scaler = joblib.load('scaler.pkl')
+        product_similarity = joblib.load('product_similarity.pkl')
+        cluster_labels = joblib.load('cluster_labels.pkl')
+        rfm_data = pd.read_csv('rfm_data.csv')
         
         return kmeans_model, scaler, product_similarity, cluster_labels, rfm_data
     except Exception as e:
