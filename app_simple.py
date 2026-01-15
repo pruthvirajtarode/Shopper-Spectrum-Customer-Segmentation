@@ -717,11 +717,11 @@ def load_models():
         if not os.path.exists('models'):
             return None, None, None, None, None
         
-        kmeans_model = joblib.load('models/kmeans_model.pkl')
-        scaler = joblib.load('models/scaler.pkl')
-        product_similarity = joblib.load('models/product_similarity.pkl')
-        cluster_labels = joblib.load('models/cluster_labels.pkl')
-        rfm_data = pd.read_csv('models/rfm_data.csv')
+        kmeans_model = joblib.load('kmeans_model.pkl')
+        scaler = joblib.load('scaler.pkl')
+        product_similarity = joblib.load('product_similarity.pkl')
+        cluster_labels = joblib.load('cluster_labels.pkl')
+        rfm_data = pd.read_csv('rfm_data.csv')
         
         return kmeans_model, scaler, product_similarity, cluster_labels, rfm_data
     except Exception as e:
@@ -786,12 +786,13 @@ if page == "🏠 Home":
     </div>
     """, unsafe_allow_html=True)
     
-    # Hero Image - Modern 3D Shopping Cart
+    # Hero Image - Using local assets
     st.markdown('<div class="img-container">', unsafe_allow_html=True)
     try:
         import base64
         from io import BytesIO
-        hero_img = Image.open('C:/Users/pruth/.gemini/antigravity/brain/f11c3ee4-417d-4458-a9b1-4ede7a84a708/modern_shopping_hero_1768477624767.png')
+        # Use local image from assets folder
+        hero_img = Image.open('hero_shopping.png')
         buffered = BytesIO()
         hero_img.save(buffered, format="PNG")
         img_str = base64.b64encode(buffered.getvalue()).decode()
@@ -806,26 +807,8 @@ if page == "🏠 Home":
                        border-radius: 10px;">''',
             unsafe_allow_html=True
         )
-    except:
-        # Fallback to old image
-        try:
-            hero_img = Image.open('C:/Users/pruth/.gemini/antigravity/brain/f11c3ee4-417d-4458-a9b1-4ede7a84a708/diverse_shoppers_hero_1768477126719.png')
-            buffered = BytesIO()
-            hero_img.save(buffered, format="PNG")
-            img_str = base64.b64encode(buffered.getvalue()).decode()
-            st.markdown(
-                f'''<img src="data:image/png;base64,{img_str}" 
-                    style="width: 100%; 
-                           height: auto; 
-                           display: block; 
-                           margin: 0 auto;
-                           animation: smoothFloat 3s ease-in-out infinite;
-                           box-shadow: 0 10px 40px rgba(74, 144, 226, 0.15);
-                           border-radius: 10px;">''',
-                unsafe_allow_html=True
-            )
-        except:
-            st.info("Welcome to Shopper Spectrum - Your E-Commerce Analytics Platform!")
+    except Exception as e:
+        st.info("🎨 Welcome to Shopper Spectrum - E-Commerce Analytics Platform!")
     st.markdown('</div>', unsafe_allow_html=True)
     
     # Welcome message
@@ -846,12 +829,12 @@ if page == "🏠 Home":
         </div>
         """, unsafe_allow_html=True)
         
-        # Product recommendation image with animation - Base64 HTML
+        # Product recommendation image - Using local assets
         st.markdown('<div class="feature-img">', unsafe_allow_html=True)
         try:
             from io import BytesIO
             import base64
-            prod_img = Image.open('C:/Users/pruth/.gemini/antigravity/brain/f11c3ee4-417d-4458-a9b1-4ede7a84a708/analytics_dashboard_visual_1768477639287.png')
+            prod_img = Image.open('analytics.png')
             buffered = BytesIO()
             prod_img.save(buffered, format="PNG")
             img_str = base64.b64encode(buffered.getvalue()).decode()
@@ -861,20 +844,8 @@ if page == "🏠 Home":
                        animation: gentleBounce 2.5s ease-in-out infinite;
                        box-shadow: 0 8px 30px rgba(74, 144, 226, 0.15);
                        border-radius: 15px;">''', unsafe_allow_html=True)
-        except:
-            try:
-                prod_img = Image.open('C:/Users/pruth/.gemini/antigravity/brain/f11c3ee4-417d-4458-a9b1-4ede7a84a708/product_recommendations_icon_1768477162480.png')
-                buffered = BytesIO()
-                prod_img.save(buffered, format="PNG")
-                img_str = base64.b64encode(buffered.getvalue()).decode()
-                st.markdown(f'''<img src="data:image/png;base64,{img_str}" 
-                    style="width: 100%; 
-                           height: auto;
-                           animation: gentleBounce 2.5s ease-in-out infinite;
-                           box-shadow: 0 8px 30px rgba(74, 144, 226, 0.15);
-                           border-radius: 15px;">''', unsafe_allow_html=True)
-            except:
-                pass
+        except Exception as e:
+            pass
         st.markdown('</div>', unsafe_allow_html=True)
     
     with col2:
@@ -885,12 +856,12 @@ if page == "🏠 Home":
         </div>
         """, unsafe_allow_html=True)
         
-        # Customer segmentation image with animation - Base64 HTML
+        # Customer segmentation image - Using local assets
         st.markdown('<div class="feature-img">', unsafe_allow_html=True)
         try:
             from io import BytesIO
             import base64
-            seg_img = Image.open('C:/Users/pruth/.gemini/antigravity/brain/f11c3ee4-417d-4458-a9b1-4ede7a84a708/modern_shopping_hero_1768477624767.png')
+            seg_img = Image.open('segments.png')
             buffered = BytesIO()
             seg_img.save(buffered, format="PNG")
             img_str = base64.b64encode(buffered.getvalue()).decode()
@@ -900,20 +871,8 @@ if page == "🏠 Home":
                        animation: gentleBounce 2.5s ease-in-out infinite;
                        box-shadow: 0 8px 30px rgba(74, 144, 226, 0.15);
                        border-radius: 15px;">''', unsafe_allow_html=True)
-        except:
-            try:
-                seg_img = Image.open('C:/Users/pruth/.gemini/antigravity/brain/f11c3ee4-417d-4458-a9b1-4ede7a84a708/customer_segmentation_icon_1768477144179.png')
-                buffered = BytesIO()
-                seg_img.save(buffered, format="PNG")
-                img_str = base64.b64encode(buffered.getvalue()).decode()
-                st.markdown(f'''<img src="data:image/png;base64,{img_str}" 
-                    style="width: 100%; 
-                           height: auto;
-                           animation: gentleBounce 2.5s ease-in-out infinite;
-                           box-shadow: 0 8px 30px rgba(74, 144, 226, 0.15);
-                           border-radius: 15px;">''', unsafe_allow_html=True)
-            except:
-                pass
+        except Exception as e:
+            pass
         st.markdown('</div>', unsafe_allow_html=True)
     
     # Statistics
