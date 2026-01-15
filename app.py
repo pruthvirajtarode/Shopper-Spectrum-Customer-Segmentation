@@ -308,7 +308,7 @@ def load_models():
         if not os.path.exists('models'):
             return None, None, None, None, None
         
-        kmeans_model = joblib.load('models/kmeans_model.pkl')
+        kmeans_model = joblib.load('kmeans_model.pkl')
         scaler = joblib.load('scaler.pkl')
         product_similarity = joblib.load('product_similarity.pkl')
         cluster_labels = joblib.load('cluster_labels.pkl')
@@ -1080,3 +1080,4 @@ st.markdown("""
     </p>
 </div>
 """, unsafe_allow_html=True)
+
