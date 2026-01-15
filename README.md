@@ -196,15 +196,15 @@ See detailed diagrams in [`diagrams/`](./diagrams/) folder.
 ## 📸 Screenshots
 
 ### Home Page
-![Home Page](assets/images/hero_shopping.png)
+![Home Page](hero_shopping.png)
 *Modern dashboard with smooth animations and statistics*
 
 ### Customer Segmentation
-![Customer Segmentation](assets/images/segments.png)
+![Customer Segmentation](segments.png)
 *RFM-based customer classification with 4 segments*
 
 ### Product Recommendations
-![Product Recommendations](assets/images/analytics.png)
+![Product Recommendations](analytics.png)
 *AI-powered collaborative filtering recommendations*
 
 ### Analytics Dashboard
@@ -387,19 +387,19 @@ Shopper-Spectrum-Customer-Segmentation/
 Complete UML documentation available in [`diagrams/`](./diagrams/) folder:
 
 ### **1. Use Case Diagram**
-![Use Case](diagrams/use_case_diagram.png)
+![Use Case](use_case_diagram.png)
 - **Actors:** Customer/User, Admin/Analyst
 - **Use Cases:** 7 main functionalities
 - **System Boundary:** Shopper Spectrum System
 
 ### **2. Sequence Diagram**
-![Sequence](diagrams/sequence_diagram.png)
+![Sequence](sequence_diagram.png)
 - **Flow:** Customer segmentation prediction
 - **Participants:** 6 components
 - **Steps:** 7 sequential operations
 
 ### **3. Class Diagram**
-![Class](diagrams/class_diagram.png)
+![Class](class_diagram.png)
 - **Classes:** 5 core components
 - **Relationships:** Inheritance, composition, association
 - **Methods:** 15+ operations
@@ -788,3 +788,4 @@ Star History
 *Empowering businesses with AI-driven customer insights*
 
 </div>
+
